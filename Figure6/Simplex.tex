@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{ternaryaxis}[
+        colorbar, colorbar style={ylabel=$\frac{\Delta\lambda}{\lambda_{\text{max}}}$}, colormap/jet,
+        ternary limits relative=false,%
+	xlabel=$r_1$,
+	ylabel=$r_2$,%
+	zlabel=$r_3$,
+        xmax = 1, ymax = 1, zmax = 1,%
+	label style=sloped,
+        area style,
+] \addplot3+[scatter, only marks, mark size = 1.2,
+  point meta= \thisrow{density}] table {Simplex.txt};
+\end{ternaryaxis}
+\end{tikzpicture}
